@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DiA Desain | Adrian Ridhoa — Arsitek & Desain Rumah Lahan Terbatas</title>
-  <meta name="description" content="Studio Arsitektur oleh Adrian Ridhoa. Spesialis solusi desain rumah lahan terbatas, split level, modern tropis, gambar kerja PBG & hitungan RAB.">
+  <meta name="description" content="Studio Arsitektur oleh Adrian Ridhoa (DiA Desain). Spesialis solusi hunian lahan terbatas, compact split-level, gambar kerja teknis PBG, dan hitungan RAB siap bangun.">
   
   <!-- Google Fonts: Syne & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,10 +20,10 @@
         extend: {
           colors: {
             brand: {
-              dark: '#0e1013',
-              card: '#16181d',
-              cardhover: '#1d2127',
-              border: '#2a2e37',
+              dark: '#0c0e12',
+              card: '#14171d',
+              cardhover: '#1b1f27',
+              border: '#242832',
               gold: '#cba358',
               goldhover: '#e2ba6e',
               wood: '#966844',
@@ -45,10 +45,10 @@
       width: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #0e1013;
+      background: #0c0e12;
     }
     ::-webkit-scrollbar-thumb {
-      background: #2a2e37;
+      background: #242832;
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
@@ -57,54 +57,107 @@
     
     /* Native dialog backdrop styling */
     dialog::backdrop {
-      background: rgba(8, 10, 12, 0.85);
-      backdrop-filter: blur(8px);
+      background: rgba(6, 8, 10, 0.88);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Range slider custom thumb */
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      background: #cba358;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(203, 163, 88, 0.6);
+      margin-top: -7px;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 8px;
+      cursor: pointer;
+      background: #242832;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body class="bg-brand-dark text-slate-100 font-sans antialiased selection:bg-brand-gold selection:text-black">
 
+  <!-- ================= TOP NOTIFICATION / TRUST BAR ================= -->
+  <div class="bg-gradient-to-r from-brand-card via-brand-dark to-brand-card border-b border-brand-border/60 text-xs py-2 px-4 hidden md:block">
+    <div class="max-w-7xl mx-auto flex items-center justify-between text-slate-400">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-1.5 text-slate-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          Melayani Konsultasi Desain Seluruh Indonesia (Online 100%)
+        </span>
+        <span class="text-brand-border">•</span>
+        <span>Dokumen Standar Pengajuan PBG & Gambar Kerja Mandor</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://www.youtube.com/@diadesain" target="_blank" class="hover:text-brand-gold transition-colors flex items-center gap-1">
+          <span>YouTube: @diadesain</span>
+        </a>
+        <span>•</span>
+        <a href="https://www.superprof.co.id/ir/20866688-5fddeb" target="_blank" class="hover:text-brand-gold transition-colors flex items-center gap-1">
+          <span>Superprof Tutor</span>
+        </a>
+        <span>•</span>
+        <a href="https://wa.me/6282223331219" target="_blank" class="text-brand-gold font-bold hover:underline">
+          Hotline WA: 0822-2333-1219
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- ================= NAVBAR ================= -->
-  <header class="fixed top-0 left-0 right-0 z-40 bg-brand-dark/85 backdrop-blur-md border-b border-brand-border/60 transition-all duration-300">
+  <header class="sticky top-0 z-40 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border/60 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <!-- Logo -->
+      
+      <!-- Brand Logo -->
       <a href="#" class="flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-gold to-brand-wood flex items-center justify-center font-title font-bold text-black text-xl shadow-lg shadow-brand-gold/20 group-hover:scale-105 transition-transform">
           D
         </div>
         <div>
           <span class="font-title text-xl font-bold tracking-tight text-white block group-hover:text-brand-gold transition-colors">DiA DESAIN</span>
-          <span class="text-[10px] tracking-widest uppercase text-brand-gold font-medium block -mt-1">Adrian Ridhoa • Arsitek</span>
+          <span class="text-[10px] tracking-widest uppercase text-brand-gold font-medium block -mt-1">Adrian Ridhoa • Architecture Studio</span>
         </div>
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#proyek" class="hover:text-brand-gold transition-colors">Portofolio Proyek</a>
-        <a href="#video-tour" class="hover:text-brand-gold transition-colors">3D Walkthrough</a>
-        <a href="#layanan" class="hover:text-brand-gold transition-colors">Paket Jasa</a>
-        <a href="#superprof" class="hover:text-brand-gold transition-colors flex items-center gap-1.5">
-          <span>Kursus Arsitektur</span>
-          <span class="bg-brand-gold/15 text-brand-gold text-[10px] px-1.5 py-0.5 rounded font-semibold border border-brand-gold/30">Superprof</span>
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-slate-300">
+        <a href="#proyek" class="hover:text-brand-gold transition-colors">Portofolio</a>
+        <a href="#tahapan" class="hover:text-brand-gold transition-colors">Tahapan Desain</a>
+        <a href="#kalkulator" class="hover:text-brand-gold transition-colors text-brand-gold flex items-center gap-1">
+          <span>Kalkulator Biaya</span>
+          <span class="text-[9px] bg-brand-gold/20 text-brand-gold px-1.5 py-0.5 rounded border border-brand-gold/40">Estimasi</span>
         </a>
-        <a href="#tentang" class="hover:text-brand-gold transition-colors">Tentang Kami</a>
+        <a href="#kelengkapan" class="hover:text-brand-gold transition-colors">Kelengkapan Gambar</a>
+        <a href="#layanan" class="hover:text-brand-gold transition-colors">Paket Jasa</a>
+        <a href="#superprof" class="hover:text-brand-gold transition-colors">Kursus/Tutor</a>
+        <a href="#tentang" class="hover:text-brand-gold transition-colors">Tentang</a>
       </nav>
 
-      <!-- CTA Button -->
+      <!-- CTA Buttons -->
       <div class="hidden sm:flex items-center gap-3">
+        <a href="#kalkulator" class="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-brand-card hover:bg-brand-cardhover text-slate-300 text-xs font-semibold border border-brand-border transition-colors">
+          <span>Hitung Biaya</span>
+        </a>
+
         <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian%20(DiA%20Desain),%20saya%20tertarik%20untuk%20konsultasi%20desain%20rumah." 
            target="_blank" 
            rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-gold to-brand-goldhover hover:opacity-95 text-brand-dark px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg shadow-brand-gold/25 hover:shadow-brand-gold/40 hover:-translate-y-0.5">
+           class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-gold to-brand-goldhover hover:opacity-95 text-brand-dark px-4 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-brand-gold/20 hover:-translate-y-0.5">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
           </svg>
-          <span>Tanya Desain</span>
+          <span>Konsultasi WA</span>
         </a>
       </div>
 
       <!-- Mobile Menu Toggle Button -->
-      <button id="mobileMenuBtn" aria-label="Buka Menu" class="md:hidden p-2 rounded-lg bg-brand-card border border-brand-border text-slate-300 hover:text-white">
+      <button id="mobileMenuBtn" aria-label="Buka Menu" class="lg:hidden p-2 rounded-lg bg-brand-card border border-brand-border text-slate-300 hover:text-white">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
@@ -112,77 +165,84 @@
     </div>
 
     <!-- Mobile Nav Drawer -->
-    <div id="mobileMenu" class="hidden md:hidden bg-brand-card/95 border-b border-brand-border px-4 py-6 space-y-4">
+    <div id="mobileMenu" class="hidden lg:hidden bg-brand-card/95 border-b border-brand-border px-4 py-6 space-y-4">
       <a href="#proyek" class="block py-2 text-slate-200 hover:text-brand-gold font-medium">Portofolio Proyek</a>
-      <a href="#video-tour" class="block py-2 text-slate-200 hover:text-brand-gold font-medium">3D Walkthrough</a>
+      <a href="#tahapan" class="block py-2 text-slate-200 hover:text-brand-gold font-medium">Tahapan Desain</a>
+      <a href="#kalkulator" class="block py-2 text-brand-gold font-bold">Kalkulator Biaya Desain</a>
+      <a href="#kelengkapan" class="block py-2 text-slate-200 hover:text-brand-gold font-medium">Kelengkapan Gambar</a>
       <a href="#layanan" class="block py-2 text-slate-200 hover:text-brand-gold font-medium">Paket Jasa</a>
       <a href="#superprof" class="block py-2 text-slate-200 hover:text-brand-gold font-medium">Kursus Arsitektur (Superprof)</a>
       <a href="#tentang" class="block py-2 text-slate-200 hover:text-brand-gold font-medium">Tentang Kami</a>
       <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian%20(DiA%20Desain),%20saya%20mau%20konsultasi%20desain%20rumah." 
          class="block text-center bg-brand-gold text-black py-3 rounded-xl font-bold">
-        Konsultasi via WhatsApp
+        Konsultasi via WhatsApp (0822-2333-1219)
       </a>
     </div>
   </header>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden border-b border-brand-border/40">
+  <!-- ================= HERO SECTION (STORYTELLING + AUTHORITY) ================= -->
+  <section class="relative pt-20 pb-20 md:pt-32 md:pb-32 overflow-hidden border-b border-brand-border/40">
     <!-- Ambient Glow / Backdrop -->
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-brand-gold/10 blur-[140px] pointer-events-none rounded-full"></div>
-    <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-brand-wood/15 blur-[120px] pointer-events-none rounded-full"></div>
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-brand-gold/10 blur-[150px] pointer-events-none rounded-full"></div>
+    <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-brand-wood/15 blur-[130px] pointer-events-none rounded-full"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         
         <!-- Text Hero -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <!-- Badge -->
+          
+          <!-- Badge Filosofi ala Sibambo -->
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-card border border-brand-gold/30 text-brand-gold text-xs font-semibold tracking-wide uppercase shadow-sm">
             <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
-            <span>Spesialis Lahan Terbatas & Compact House</span>
+            <span>Setiap Jengkal Tanah Punya Cerita & Solusi</span>
           </div>
 
-          <h1 class="font-title text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] text-white tracking-tight">
-            Wujudkan Rumah Impian di <span class="bg-gradient-to-r from-brand-gold via-yellow-200 to-amber-500 bg-clip-text text-transparent">Lahan Terbatas</span> Tanpa Rasa Sempit.
+          <h1 class="font-title text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.12] text-white tracking-tight">
+            Rumah Nyaman & Bernyawa di <span class="bg-gradient-to-r from-brand-gold via-yellow-200 to-amber-500 bg-clip-text text-transparent">Lahan Terbatas</span>.
           </h1>
 
           <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-            Bersama <strong class="text-white font-semibold">DiA Desain (Adrian Ridhoa)</strong>, maksimalkan setiap jengkal lahan dengan pencahayaan alami, sirkulasi optimal, dan tata ruang split-level fungsional. Dilengkapi gambar kerja lengkap & estimasi RAB akurat.
+            Bukan sekadar menggambar denah. <strong class="text-white font-semibold">DiA Desain (Adrian Ridhoa)</strong> menerjemahkan kebiasaan hidup keluarga Anda menjadi hunian kompak split-level yang lapang, sejuk alami, siap izin PBG, dan terukur anggarannya.
           </p>
 
-          <!-- Buttons -->
+          <!-- Buttons Group -->
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian,%20saya%20punya%20lahan%20dan%20ingin%20konsultasi%20desain%20rumah." 
+            <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian%20(DiA%20Desain),%20saya%20ingin%20konsultasi%20desain%20rumah." 
                target="_blank"
-               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-gold to-brand-goldhover hover:brightness-105 text-brand-dark px-8 py-4 rounded-xl font-bold text-base shadow-xl shadow-brand-gold/20 transition-all hover:-translate-y-0.5">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-gold to-brand-goldhover hover:brightness-105 text-brand-dark px-7 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-xl shadow-brand-gold/20 transition-all hover:-translate-y-0.5">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
               </svg>
               <span>Konsultasi Desain (WA)</span>
             </a>
             
-            <a href="#proyek" 
-               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-card hover:bg-brand-cardhover text-slate-200 border border-brand-border px-7 py-4 rounded-xl font-semibold text-base transition-colors">
-              <span>Eksplor Portofolio</span>
+            <a href="#kalkulator" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-card hover:bg-brand-cardhover text-brand-gold border border-brand-gold/40 px-6 py-4 rounded-xl font-bold text-sm uppercase tracking-wider transition-colors shadow-lg">
+              <span>Hitung Estimasi Biaya</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
           </div>
 
-          <!-- Highlight Stats -->
-          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-brand-border/60">
-            <div>
-              <p class="font-title text-2xl sm:text-3xl font-extrabold text-brand-gold">100+</p>
-              <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Konsep Rumah</p>
+          <!-- 4 Trust Badges ala Emporio -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-brand-border/60">
+            <div class="p-3 rounded-xl bg-brand-card/50 border border-brand-border/80">
+              <span class="text-brand-gold text-lg font-bold block">100%</span>
+              <span class="text-[11px] text-slate-300 font-medium">Bisa Dibangun</span>
             </div>
-            <div>
-              <p class="font-title text-2xl sm:text-3xl font-extrabold text-brand-gold">100%</p>
-              <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Siap PBG & RAB</p>
+            <div class="p-3 rounded-xl bg-brand-card/50 border border-brand-border/80">
+              <span class="text-brand-gold text-lg font-bold block">PBG Ready</span>
+              <span class="text-[11px] text-slate-300 font-medium">Standar Teknis</span>
             </div>
-            <div>
-              <p class="font-title text-2xl sm:text-3xl font-extrabold text-brand-gold">5.0 ★</p>
-              <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Superprof Tutor</p>
+            <div class="p-3 rounded-xl bg-brand-card/50 border border-brand-border/80">
+              <span class="text-brand-gold text-lg font-bold block">RAB Rinci</span>
+              <span class="text-[11px] text-slate-300 font-medium">Anti Boncos</span>
+            </div>
+            <div class="p-3 rounded-xl bg-brand-card/50 border border-brand-border/80">
+              <span class="text-brand-gold text-lg font-bold block">YouTube 3D</span>
+              <span class="text-[11px] text-slate-300 font-medium">Walkthrough Tour</span>
             </div>
           </div>
         </div>
@@ -201,11 +261,11 @@
               
               <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent"></div>
               
-              <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-brand-dark/80 backdrop-blur-md border border-brand-border flex items-center justify-between">
+              <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-brand-dark/85 backdrop-blur-md border border-brand-border flex items-center justify-between">
                 <div>
-                  <span class="text-xs font-semibold uppercase tracking-wider text-brand-gold">Featured Project</span>
-                  <h3 class="font-title text-white font-bold text-lg">Rumah Tropis Split Level (Lahan 7x14m)</h3>
-                  <p class="text-xs text-slate-400">Rooftop Garden • Inner Courtyard • 3 Kamar Tidur</p>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-brand-gold">Featured Project</span>
+                  <h3 class="font-title text-white font-bold text-base sm:text-lg">The Stepped Sanctuary (7x14m)</h3>
+                  <p class="text-xs text-slate-400">Solusi Kontur Split Level & Void Sirkulasi Angin</p>
                 </div>
                 <button onclick="openModal('project-1')" class="p-2.5 rounded-lg bg-brand-gold text-black hover:bg-brand-goldhover transition-colors font-bold text-xs" title="Lihat Detail">
                   Detail
@@ -219,19 +279,350 @@
     </div>
   </section>
 
-  <!-- ================= PORTOFOLIO SECTION ================= -->
+  <!-- ================= KALKULATOR ESTIMASI BIAYA DESAIN (FITUR UNGGULAN ALA EMPORIO ARCHITECT) ================= -->
+  <section id="kalkulator" class="py-20 border-b border-brand-border/40 bg-gradient-to-b from-brand-dark via-brand-card/40 to-brand-dark relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/15 text-brand-gold border border-brand-gold/30 text-xs font-bold uppercase tracking-wider mb-2">
+          <span>Transparansi Biaya</span>
+        </div>
+        <h2 class="font-title text-3xl sm:text-4xl font-extrabold text-white">
+          Kalkulator Estimasi Biaya Desain
+        </h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Geser luas perkiraan bangunan dan pilih jenis paket untuk melihat simulasi biaya desain transparan serta estimasi biaya bangun fisik.
+        </p>
+      </div>
+
+      <div class="rounded-3xl p-6 sm:p-10 bg-brand-card border border-brand-gold/40 shadow-2xl space-y-8">
+        
+        <!-- Step 1: Slider Luas Bangunan -->
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <label for="luasSlider" class="text-sm font-bold text-white uppercase tracking-wider">
+              1. Perkiraan Luas Bangunan (m²):
+            </label>
+            <div class="flex items-baseline gap-1 bg-brand-dark px-4 py-1.5 rounded-xl border border-brand-border">
+              <span id="luasDisplay" class="font-title text-2xl font-extrabold text-brand-gold">120</span>
+              <span class="text-xs text-slate-400">m²</span>
+            </div>
+          </div>
+          
+          <input 
+            type="range" 
+            id="luasSlider" 
+            min="45" 
+            max="400" 
+            step="5" 
+            value="120"
+            class="w-full accent-brand-gold bg-brand-border rounded-lg h-2"
+            oninput="calculateCost()">
+          
+          <div class="flex justify-between text-[11px] text-slate-500 font-medium">
+            <span>45 m² (Rumah Kompak 1 Lantai)</span>
+            <span>120 m² (Kavling Populer 2 Lantai)</span>
+            <span>400 m² (Hunian Besar)</span>
+          </div>
+        </div>
+
+        <!-- Step 2: Pilihan Paket Desain -->
+        <div class="space-y-3">
+          <label class="text-sm font-bold text-white uppercase tracking-wider block">
+            2. Pilih Kelengkapan Paket Desain:
+          </label>
+          <div class="grid sm:grid-cols-3 gap-3">
+            
+            <label class="cursor-pointer">
+              <input type="radio" name="calcPackage" value="konsep" class="peer sr-only" onchange="calculateCost()">
+              <div class="p-4 rounded-xl bg-brand-dark/70 border border-brand-border peer-checked:border-brand-gold peer-checked:bg-brand-gold/10 transition-all text-center">
+                <span class="text-xs font-bold text-white block">Paket 01: Konsep 3D</span>
+                <span class="text-[11px] text-slate-400 block mt-1">Denah 2D + 3D Fasad</span>
+                <span class="text-xs text-brand-gold font-semibold mt-2 block">Rp 50.000 / m²</span>
+              </div>
+            </label>
+
+            <label class="cursor-pointer">
+              <input type="radio" name="calcPackage" value="lengkap" checked class="peer sr-only" onchange="calculateCost()">
+              <div class="p-4 rounded-xl bg-brand-dark/70 border-2 border-brand-gold peer-checked:border-brand-gold peer-checked:bg-brand-gold/15 transition-all text-center relative">
+                <span class="absolute -top-2.5 right-3 bg-brand-gold text-black text-[9px] font-extrabold px-2 py-0.5 rounded-full uppercase">Paling Dicari</span>
+                <span class="text-xs font-bold text-white block">Paket 02: DED Lengkap (PBG)</span>
+                <span class="text-[11px] text-slate-400 block mt-1">Arsitektur + Struktur + MEP</span>
+                <span class="text-xs text-brand-gold font-semibold mt-2 block">Rp 85.000 / m²</span>
+              </div>
+            </label>
+
+            <label class="cursor-pointer">
+              <input type="radio" name="calcPackage" value="komplit" class="peer sr-only" onchange="calculateCost()">
+              <div class="p-4 rounded-xl bg-brand-dark/70 border border-brand-border peer-checked:border-brand-gold peer-checked:bg-brand-gold/10 transition-all text-center">
+                <span class="text-xs font-bold text-white block">Paket 03: Desain + RAB</span>
+                <span class="text-[11px] text-slate-400 block mt-1">DED + Hitungan RAB Bangun</span>
+                <span class="text-xs text-brand-gold font-semibold mt-2 block">Rp 110.000 / m²</span>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Result Box (Ala Emporio Calculator) -->
+        <div class="pt-6 border-t border-brand-border/80 grid md:grid-cols-2 gap-6 items-center">
+          <div class="p-5 rounded-2xl bg-brand-dark border border-brand-border space-y-3">
+            <div>
+              <span class="text-xs text-slate-400 uppercase tracking-wider block">Estimasi Biaya Jasa Desain:</span>
+              <p id="totalDesainCost" class="font-title text-3xl sm:text-4xl font-extrabold text-brand-gold mt-1">
+                Rp 10.200.000
+              </p>
+              <span id="packageDetailText" class="text-xs text-slate-300 mt-1 block">Termasuk Gambar Kerja Teknis & Siap PBG</span>
+            </div>
+
+            <div class="pt-3 border-t border-brand-border/60">
+              <span class="text-[11px] text-slate-400 block">Estimasi Kasar Biaya Fisik Bangun (Rp 4 - 4.5 Jt/m²):</span>
+              <p id="totalBuildEstimate" class="font-title text-lg font-bold text-slate-200 mt-0.5">
+                ± Rp 480 - 540 Juta
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-3 text-center md:text-left">
+            <h4 class="font-title text-lg font-bold text-white">Cocok dengan Perhitungan Anda?</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Dapatkan konsultasi pra-desain gratis untuk mendiskusikan denah lahan Anda langsung bersama Arsitek Adrian Ridhoa.
+            </p>
+            <a id="calcWaBtn" 
+               href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian,%20saya%20sudah%20hitung%20di%20kalkulator%20web:%20Luas%20Bangunan%20120m2,%20Paket%20DED%20Lengkap%20(PBG)." 
+               target="_blank" 
+               class="inline-flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-gradient-to-r from-brand-gold to-brand-goldhover text-black font-extrabold text-xs uppercase tracking-wider shadow-lg hover:brightness-105 transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              <span>Klaim Estimasi Ini via WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TAHAPAN ALUR KERJA (WORKFLOW ALA SIBAMBO STUDIO) ================= -->
+  <section id="tahapan" class="py-24 border-b border-brand-border/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Proses Transparan & Bebas Stres</span>
+        <h2 class="font-title text-3xl sm:text-4xl font-extrabold text-white mt-1">
+          4 Tahapan Mewujudkan Rumah Anda
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Alur kerja sistematis mulai dari mendengarkan cerita kebiasaan Anda hingga penyerahan dokumen siap bangun.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6 relative">
+        
+        <!-- Step 1 -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center font-title text-xl font-extrabold text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+              01
+            </div>
+            <h3 class="font-title text-xl font-bold text-white">Berkenalan & Riset Kebutuhan</h3>
+            <p class="text-xs text-brand-gold font-semibold uppercase tracking-wider mt-1">Konsultasi Awal</p>
+            <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">
+              Mendengarkan kisah hidup, kebiasaan keluarga, ukuran lahan, dan target anggaran yang ingin Anda alokasikan.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-brand-border/60 text-[11px] text-slate-400">
+            ✓ Diskusi via WA/Zoom • Analisis Potensi Lahan
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center font-title text-xl font-extrabold text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+              02
+            </div>
+            <h3 class="font-title text-xl font-bold text-white">Konsep Tata Ruang & 3D Fasad</h3>
+            <p class="text-xs text-brand-gold font-semibold uppercase tracking-wider mt-1">Eksplorasi Bentuk</p>
+            <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">
+              Pembuatan denah 2D fungsional serta visualisasi 3D fasad eksterior yang estetik, hemat ruang, dan sejuk alami.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-brand-border/60 text-[11px] text-slate-400">
+            ✓ Denah Presisi • Render Fasad HD • Kesempatan Revisi
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center font-title text-xl font-extrabold text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+              03
+            </div>
+            <h3 class="font-title text-xl font-bold text-white">Gambar Kerja Teknis (DED)</h3>
+            <p class="text-xs text-brand-gold font-semibold uppercase tracking-wider mt-1">Dokumen Standar PBG</p>
+            <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">
+              Penyusunan gambar teknis arsitektur, kalkulasi struktur penulangan anti-retak, dan jalur instalasi MEP lengkap.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-brand-border/60 text-[11px] text-slate-400">
+            ✓ Siap Izin PBG/IMB • Panduan Mandor/Tukang
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center font-title text-xl font-extrabold text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+              04
+            </div>
+            <h3 class="font-title text-xl font-bold text-white">Hitungan RAB & Serah Terima</h3>
+            <p class="text-xs text-brand-gold font-semibold uppercase tracking-wider mt-1">Siap Eksekusi Bangun</p>
+            <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">
+              Penyusunan Rencana Anggaran Biaya (RAB) volume material riil, penyerahan berkas cetak A3, dan konsultasi berkala saat pembangunan.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-brand-border/60 text-[11px] text-slate-400">
+            ✓ File PDF Siap Cetak • Pendampingan Konstruksi
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Trust Note: Sistem Termin -->
+      <div class="mt-12 p-6 rounded-2xl bg-brand-dark border border-brand-border text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-left">
+          <span class="text-xs text-brand-gold font-bold uppercase tracking-wider block">Sistem Pembayaran Bertahap (Termin)</span>
+          <p class="text-xs text-slate-300 mt-0.5">Pembayaran dibagi bertahap sesuai progres kemajuan desain: DP Awal 30% • Tahap 3D 40% • Serah Terima Final 30%.</p>
+        </div>
+        <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian,%20saya%20ingin%20tanya%20prosedur%20pemesanan%20desain." target="_blank" class="text-xs font-bold text-brand-gold hover:underline whitespace-nowrap">
+          Tanya Prosedur Pemesanan →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= STANDAR KELENGKAPAN GAMBAR KERJA (ALA EMPORIO ARCHITECT) ================= -->
+  <section id="kelengkapan" class="py-24 border-b border-brand-border/40 bg-gradient-to-b from-brand-card/20 to-brand-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Jaminan Kualitas Teknis</span>
+        <h2 class="font-title text-3xl sm:text-4xl font-extrabold text-white mt-1">
+          Kelengkapan Dokumen Gambar Kerja
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Setiap paket lengkap di DiA Desain mencakup 4 pilar dokumen teknis berstandar tinggi yang siap dieksekusi kontraktor maupun tukang lokal.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Kolom 1: Arsitektur -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-blue-500/15 text-blue-400 flex items-center justify-center font-bold">
+              📐
+            </div>
+            <div>
+              <h3 class="font-title text-lg font-bold text-white">Gambar Arsitektur</h3>
+              <span class="text-[10px] text-slate-400 uppercase">Tata Ruang & Estetika</span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-start gap-2"><span>✓</span><span>Denah Tata Ruang Tiap Lantai</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Tampak Bangunan 4 Sisi (Depan/Samping/Belakang)</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Potongan Melintang & Membujur</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Rencana Pola Lantai & Plafon</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Detail Kusen, Pintu & Jendela</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Detail Fasad & Tangga</span></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 2: Struktur -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/15 text-amber-400 flex items-center justify-center font-bold">
+              🏗️
+            </div>
+            <div>
+              <h3 class="font-title text-lg font-bold text-white">Gambar Struktur</h3>
+              <span class="text-[10px] text-slate-400 uppercase">Kekuatan & Ketahanan</span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-start gap-2"><span>✓</span><span>Rencana Titik Pondasi & Sloof</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Denah Kolom Praktis & Kolom Utama</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Denah Balok & Ringbalk</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Detail Pembesian Plat Lantai</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Rencana Rangka Atap / Baja Ringan</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Standar Tahan Gempa SNI</span></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: MEP -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center font-bold">
+              ⚡
+            </div>
+            <div>
+              <h3 class="font-title text-lg font-bold text-white">Gambar MEP</h3>
+              <span class="text-[10px] text-slate-400 uppercase">Mekanikal & Elektrikal</span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-start gap-2"><span>✓</span><span>Instalasi Titik Lampu & Saklar</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Titik Stop Kontak & Jalur AC</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Jalur Air Bersih & Pompa Air</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Jalur Air Kotor & Air Bekas</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Detail Bio Septic Tank & Resapan</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Saluran Pembuangan Hujan</span></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 4: 3D & RAB -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-rose-500/15 text-rose-400 flex items-center justify-center font-bold">
+              📊
+            </div>
+            <div>
+              <h3 class="font-title text-lg font-bold text-white">Visual 3D & RAB</h3>
+              <span class="text-[10px] text-slate-400 uppercase">Estetika & Anggaran</span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-start gap-2"><span>✓</span><span>Visualisasi 3D Fasad High Resolution</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Video 3D Walkthrough Tour (YouTube)</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Bill of Quantity (BOQ)</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Hitungan RAB Akurat Analisa Harga</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>Rekomendasi Spesifikasi Material</span></li>
+            <li class="flex items-start gap-2"><span>✓</span><span>File Format PDF Siap Cetak A3</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PORTOFOLIO SECTION (STORYTELLING MASALAH VS SOLUSI) ================= -->
   <section id="proyek" class="py-24 border-b border-brand-border/40 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Karya & Eksplorasi Desain</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Studi Kasus Desain</span>
           <h2 class="font-title text-3xl sm:text-4xl font-extrabold text-white mt-1">
-            Galeri Portofolio Proyek
+            Galeri Karya & Solusi Lahan
           </h2>
           <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-xl">
-            Solusi tata ruang kreatif untuk berbagai ukuran lahan dengan pendekatan hemat energi, sirkulasi alami, dan estetika kekinian.
+            Setiap proyek memiliki tantangan tersendiri: lahan sempit, minim bukaan angin, atau kontur tanah. Lihat bagaimana kami mengatasinya.
           </p>
         </div>
 
@@ -268,14 +659,17 @@
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Split Level Concept</span>
-              <h3 class="font-title text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-1">
-                The Stepped Sanctuary (7x14)
-              </h3>
-              <p class="text-slate-400 text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
-                Memaksimalkan kontur ruang dengan mezanin semi-terbuka, void tinggi untuk sirkulasi angin sejuk, dan carport 2 mobil.
-              </p>
+            <div class="space-y-3">
+              <div>
+                <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Split Level Concept</span>
+                <h3 class="font-title text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-0.5">
+                  The Stepped Sanctuary (7x14)
+                </h3>
+              </div>
+              <div class="p-3 rounded-xl bg-brand-dark/60 border border-brand-border text-xs space-y-1">
+                <p class="text-slate-400"><strong class="text-rose-400 font-semibold">Tantangan:</strong> Lahan sempit diapit tetangga, ingin sirkulasi udara maksimal.</p>
+                <p class="text-slate-300"><strong class="text-brand-gold font-semibold">Solusi:</strong> Split level 1.2m dengan void tengah & rooftop taman.</p>
+              </div>
             </div>
             <div class="pt-5 mt-5 border-t border-brand-border/60 flex items-center justify-between">
               <span class="text-xs text-slate-400 font-medium">3 KT • 2 KM • Rooftop</span>
@@ -300,17 +694,20 @@
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Compact Living</span>
-              <h3 class="font-title text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-1">
-                Urban Minimalist House (6x12)
-              </h3>
-              <p class="text-slate-400 text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
-                Desain fasad modern dengan kisi-kisi kayu penahan panas matahari barat, inner courtyard tengah, dan area cuci jemur tersembunyi.
-              </p>
+            <div class="space-y-3">
+              <div>
+                <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Compact Living</span>
+                <h3 class="font-title text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-0.5">
+                  Urban Minimalist House (6x12)
+                </h3>
+              </div>
+              <div class="p-3 rounded-xl bg-brand-dark/60 border border-brand-border text-xs space-y-1">
+                <p class="text-slate-400"><strong class="text-rose-400 font-semibold">Tantangan:</strong> Kavling perumahan standar 72m² rawan pengap & gelap.</p>
+                <p class="text-slate-300"><strong class="text-brand-gold font-semibold">Solusi:</strong> Inner courtyard di tengah rumah + kisi-kisi kayu penahan panas.</p>
+              </div>
             </div>
             <div class="pt-5 mt-5 border-t border-brand-border/60 flex items-center justify-between">
-              <span class="text-xs text-slate-400 font-medium">3 KT • 2 KM • Taman Dalam</span>
+              <span class="text-xs text-slate-400 font-medium">3 KT • 2 KM • Taman Tengah</span>
               <button onclick="openModal('project-2')" class="text-xs font-bold text-brand-gold hover:underline flex items-center gap-1">
                 <span>Lihat Detail</span>
                 <span>→</span>
@@ -332,14 +729,17 @@
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Rooftop Oasis</span>
-              <h3 class="font-title text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-1">
-                The Sky Terrace Villa (8x15)
-              </h3>
-              <p class="text-slate-400 text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
-                Dilengkapi kolam renang mini di lantai dasar dan rooftop santai lantai 3 untuk kumpul keluarga dengan view perkotaan luas.
-              </p>
+            <div class="space-y-3">
+              <div>
+                <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Rooftop Oasis</span>
+                <h3 class="font-title text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-0.5">
+                  The Sky Terrace Villa (8x15)
+                </h3>
+              </div>
+              <div class="p-3 rounded-xl bg-brand-dark/60 border border-brand-border text-xs space-y-1">
+                <p class="text-slate-400"><strong class="text-rose-400 font-semibold">Tantangan:</strong> Menginginkan nuansa villa liburan lengkap dengan kolam renang di kota.</p>
+                <p class="text-slate-300"><strong class="text-brand-gold font-semibold">Solusi:</strong> Plunge pool di samping ruang keluarga & rooftop sunset lantai 3.</p>
+              </div>
             </div>
             <div class="pt-5 mt-5 border-t border-brand-border/60 flex items-center justify-between">
               <span class="text-xs text-slate-400 font-medium">4 KT • 3 KM • Rooftop & Kolam</span>
@@ -364,14 +764,17 @@
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Industrial Minimalis</span>
-              <h3 class="font-title text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-1">
-                Monochrome Haven (6x15)
-              </h3>
-              <p class="text-slate-400 text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
-                Konsep open-space yang lega menghubungkan ruang keluarga, makan, dan pantry tanpa sekat masif. Efisien biaya pembangunan.
-              </p>
+            <div class="space-y-3">
+              <div>
+                <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Industrial Minimalis</span>
+                <h3 class="font-title text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-0.5">
+                  Monochrome Haven (6x15)
+                </h3>
+              </div>
+              <div class="p-3 rounded-xl bg-brand-dark/60 border border-brand-border text-xs space-y-1">
+                <p class="text-slate-400"><strong class="text-rose-400 font-semibold">Tantangan:</strong> Lahan memanjang sering membuat ruangan tengah terisolasi.</p>
+                <p class="text-slate-300"><strong class="text-brand-gold font-semibold">Solusi:</strong> Open plan tanpa dinding masif, menyatukan living, dining & pantry.</p>
+              </div>
             </div>
             <div class="pt-5 mt-5 border-t border-brand-border/60 flex items-center justify-between">
               <span class="text-xs text-slate-400 font-medium">3 KT • 2 KM • Open Plan</span>
@@ -396,14 +799,17 @@
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Micro House</span>
-              <h3 class="font-title text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-1">
-                Compact Split House (6x10)
-              </h3>
-              <p class="text-slate-400 text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
-                Tantangan lahan super sempit diselesaikan lewat pembagian ketinggian 1.5 meter, memberikan ilusi ruangan 2 kali lebih lapang.
-              </p>
+            <div class="space-y-3">
+              <div>
+                <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Micro House</span>
+                <h3 class="font-title text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-0.5">
+                  Compact Split House (6x10)
+                </h3>
+              </div>
+              <div class="p-3 rounded-xl bg-brand-dark/60 border border-brand-border text-xs space-y-1">
+                <p class="text-slate-400"><strong class="text-rose-400 font-semibold">Tantangan:</strong> Luas tanah hanya 60m², butuh ruang kerja dan 2 kamar tidur.</p>
+                <p class="text-slate-300"><strong class="text-brand-gold font-semibold">Solusi:</strong> Pemanfaatan mezanin kerja di atas carport dengan langit-langit tinggi.</p>
+              </div>
             </div>
             <div class="pt-5 mt-5 border-t border-brand-border/60 flex items-center justify-between">
               <span class="text-xs text-slate-400 font-medium">2 KT • 2 KM • Mezzanine</span>
@@ -428,14 +834,17 @@
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Tropical Modern</span>
-              <h3 class="font-title text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-1">
-                The Breezy Courtyard (9x15)
-              </h3>
-              <p class="text-slate-400 text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
-                Konsep sirkulasi silang (*cross-ventilation*) dengan taman samping dan kanopi teralis modern. Sejuk tanpa perlu AC menyala seharian.
-              </p>
+            <div class="space-y-3">
+              <div>
+                <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Tropical Modern</span>
+                <h3 class="font-title text-xl font-bold text-white group-hover:text-brand-gold transition-colors mt-0.5">
+                  The Breezy Courtyard (9x15)
+                </h3>
+              </div>
+              <div class="p-3 rounded-xl bg-brand-dark/60 border border-brand-border text-xs space-y-1">
+                <p class="text-slate-400"><strong class="text-rose-400 font-semibold">Tantangan:</strong> Iklim tropis lembap dan panas saat siang hari.</p>
+                <p class="text-slate-300"><strong class="text-brand-gold font-semibold">Solusi:</strong> Ventilasi silang linear menghadap taman samping dan kanopi teduh.</p>
+              </div>
             </div>
             <div class="pt-5 mt-5 border-t border-brand-border/60 flex items-center justify-between">
               <span class="text-xs text-slate-400 font-medium">4 KT • 3 KM • Taman Samping</span>
@@ -449,23 +858,10 @@
 
       </div>
 
-      <!-- CTA Hubungi Kami untuk Lahan Kustom -->
-      <div class="mt-16 p-8 rounded-2xl bg-gradient-to-r from-brand-card via-brand-cardhover to-brand-card border border-brand-gold/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-        <div class="space-y-1 text-center md:text-left">
-          <h4 class="font-title text-xl font-bold text-white">Punya Ukuran Tanah Berbeda atau Bentuk Trapesium?</h4>
-          <p class="text-slate-300 text-sm">Konsultasikan denah lahan lu secara gratis. Kami bantu buatkan solusi tata ruang terbaiknya.</p>
-        </div>
-        <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian,%20saya%20punya%20tanah%20ukuran%20custom%20dan%20ingin%20konsultasi%20desain." 
-           target="_blank" 
-           class="whitespace-nowrap px-6 py-3 rounded-xl bg-brand-gold text-black font-bold text-sm hover:bg-brand-goldhover transition-colors shadow-lg">
-          Konsultasi Ukuran Tanah Lu →
-        </a>
-      </div>
-
     </div>
   </section>
 
-  <!-- ================= YOUTUBE VIDEO SHOWCASE ================= -->
+  <!-- ================= YOUTUBE VIDEO SHOWCASE (INTEGRASI ALA SIBAMBO) ================= -->
   <section id="video-tour" class="py-24 border-b border-brand-border/40 bg-gradient-to-b from-brand-dark to-brand-card/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -477,10 +873,10 @@
           <span>Kanal YouTube @diadesain</span>
         </div>
         <h2 class="font-title text-3xl sm:text-4xl font-extrabold text-white">
-          Jelajahi Visual 3D Walkthrough
+          Simulasi Ruang Melalui 3D Walkthrough
         </h2>
         <p class="text-slate-400 text-sm sm:text-base mt-2">
-          Rasakan pengalaman nyata menelusuri setiap sudut ruangan sebelum rumah mulai dibangun.
+          Rasakan pengalaman nyata menelusuri setiap sudut ruangan dan pencahayaan matahari sebelum batu bata pertama dipasang.
         </p>
       </div>
 
@@ -488,7 +884,6 @@
         <!-- Main Video Frame -->
         <div class="lg:col-span-8">
           <div class="relative aspect-video rounded-2xl overflow-hidden bg-brand-card border border-brand-border shadow-2xl">
-            <!-- Responsive YouTube Embed (menggunakan video edukasi arsitektur inspiratif) -->
             <iframe 
               class="w-full h-full" 
               src="https://www.youtube.com/embed?listType=user_uploads&list=diadesain" 
@@ -503,7 +898,7 @@
         <!-- Video Info & Subscribe CTA -->
         <div class="lg:col-span-4 space-y-6">
           <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-4">
-            <h3 class="font-title text-xl font-bold text-white">Kenapa Video Walkthrough Penting?</h3>
+            <h3 class="font-title text-xl font-bold text-white">Kenapa Visual Walkthrough Penting?</h3>
             <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
               <li class="flex items-start gap-2.5">
                 <span class="text-brand-gold font-bold">✔</span>
@@ -515,7 +910,7 @@
               </li>
               <li class="flex items-start gap-2.5">
                 <span class="text-brand-gold font-bold">✔</span>
-                <span>Menghindari salah bongkar di lapangan yang bikin biaya membengkak.</span>
+                <span>Menghindari salah bangun atau bongkar pasang di lapangan yang bikin biaya membengkak.</span>
               </li>
             </ul>
           </div>
@@ -526,7 +921,7 @@
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
-            <span>Tonton Video Lain di YouTube</span>
+            <span>Tonton Video Inspirasi di YouTube</span>
           </a>
         </div>
       </div>
@@ -534,17 +929,17 @@
     </div>
   </section>
 
-  <!-- ================= PAKET LAYANAN & HARGA ================= -->
+  <!-- ================= PAKET LAYANAN & SISTEM TERMIN ================= -->
   <section id="layanan" class="py-24 border-b border-brand-border/40 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Investasi Desain Terarah</span>
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Pilihan Paket Transparan</span>
         <h2 class="font-title text-3xl sm:text-4xl font-extrabold text-white mt-1">
-          Pilihan Paket Jasa Desain
+          Daftar Paket Jasa Arsitektur
         </h2>
         <p class="text-slate-400 text-sm sm:text-base mt-2">
-          Pilih paket yang sesuai dengan kebutuhan rencana bangun Anda. Transparan, terstruktur, dan siap pakai.
+          Pilih paket yang paling sesuai dengan kebutuhan pembangunan Anda. Sistem penagihan bertahap (termin) sesuai progres desain.
         </p>
       </div>
 
@@ -555,45 +950,34 @@
           <div>
             <span class="text-xs uppercase font-bold tracking-widest text-slate-400">Paket 01</span>
             <h3 class="font-title text-2xl font-bold text-white mt-1">Konsep 3D & Tata Ruang</h3>
-            <p class="text-xs text-slate-400 mt-2">Cocok untuk Anda yang ingin mematangkan ide fasad & pembagian ruangan terlebih dahulu.</p>
+            <p class="text-xs text-slate-400 mt-2">Ideal untuk Anda yang ingin mematangkan ide fasad & pembagian ruangan sebelum persiapan konstruksi.</p>
 
             <div class="my-6 py-4 border-y border-brand-border/60">
-              <span class="text-xs text-slate-400">Mulai dari</span>
-              <p class="font-title text-3xl font-extrabold text-white mt-0.5">Konsultasi</p>
-              <span class="text-xs text-brand-gold">Harga ramah disesuaikan luas lahan</span>
+              <span class="text-xs text-slate-400">Estimasi Fee</span>
+              <p class="font-title text-2xl font-extrabold text-white mt-0.5">Rp 50.000 <span class="text-xs font-normal text-slate-400">/ m²</span></p>
+              <span class="text-xs text-brand-gold">Minimal 60 m² bangunan</span>
             </div>
 
             <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold">✓</span>
-                <span>Denah Tata Ruang 2D (Skala Presisi)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold">✓</span>
-                <span>Visualisasi 3D Fasad Eksterior (HD Render)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold">✓</span>
-                <span>Potongan Bangunan Skematik</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold">✓</span>
-                <span>Revisi Konsep Desain (2x)</span>
-              </li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold">✓</span><span>Denah Tata Ruang 2D Presisi</span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold">✓</span><span>3D Fasad Eksterior (Render HD)</span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold">✓</span><span>Gambar Potongan Skematik</span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold">✓</span><span>Konsultasi Konsep & Moodboard</span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold">✓</span><span>Revisi Desain (2x)</span></li>
             </ul>
           </div>
 
-          <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian,%20saya%20ingin%20tanya%20detail%20Paket%20Konsep%203D%20dan%20tata%20ruang." 
+          <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian,%20saya%20tertarik%20dengan%20Paket%2001%20(Konsep%203D%20%26%20Tata%20Ruang)." 
              target="_blank" 
-             class="mt-8 w-full py-3 text-center rounded-xl bg-brand-border hover:bg-slate-700 text-white font-bold text-sm transition-colors">
-            Pilih Paket Konsep
+             class="mt-8 w-full py-3 text-center rounded-xl bg-brand-border hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider transition-colors">
+            Pilih Paket Konsep 3D
           </a>
         </div>
 
         <!-- PAKET 2 (BEST SELLER) -->
         <div class="rounded-2xl p-8 bg-brand-card border-2 border-brand-gold relative flex flex-col justify-between shadow-2xl shadow-brand-gold/10">
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-gold to-yellow-500 text-black text-[11px] font-extrabold px-4 py-1 rounded-full uppercase tracking-wider shadow">
-            Paling Populer & Siap IMB/PBG
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-gold to-yellow-500 text-black text-[10px] font-extrabold px-4 py-1 rounded-full uppercase tracking-wider shadow">
+            Paling Direkomendasikan • Siap PBG
           </div>
 
           <div>
@@ -602,38 +986,24 @@
             <p class="text-xs text-slate-400 mt-2">Paket lengkap teknis arsitektur untuk pengajuan izin PBG dan panduan mandor di lapangan.</p>
 
             <div class="my-6 py-4 border-y border-brand-border/60">
-              <span class="text-xs text-slate-400">Solusi Tuntas</span>
-              <p class="font-title text-3xl font-extrabold text-brand-gold mt-0.5">Siap Bangun</p>
+              <span class="text-xs text-slate-400">Estimasi Fee</span>
+              <p class="font-title text-2xl font-extrabold text-brand-gold mt-0.5">Rp 85.000 <span class="text-xs font-normal text-slate-400">/ m²</span></p>
               <span class="text-xs text-slate-300">Arsitektur + Struktur + MEP Lengkap</span>
             </div>
 
             <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold font-bold">✓</span>
-                <span><strong>Semua yang ada di Paket 01</strong></span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold font-bold">✓</span>
-                <span>Gambar Kerja Arsitektur (Denah, Tampak, Potongan)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold font-bold">✓</span>
-                <span>Gambar Struktur (Pondasi, Sloof, Kolom, Balok, Plat)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold font-bold">✓</span>
-                <span>MEP (Instalasi Titik Lampu, Stop Kontak, Air Bersih/Kotor)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold font-bold">✓</span>
-                <span>Format Dokumen Standar Izin PBG / IMB</span>
-              </li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold font-bold">✓</span><span><strong>Semua yang ada di Paket 01</strong></span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold font-bold">✓</span><span>Gambar Kerja Arsitektur Lengkap</span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold font-bold">✓</span><span>Gambar Detail Struktur SNI</span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold font-bold">✓</span><span>Gambar MEP (Listrik & Perpipaan Air)</span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold font-bold">✓</span><span>Format Dokumen Standar Izin PBG/IMB</span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold font-bold">✓</span><span>Video 3D Walkthrough Tour</span></li>
             </ul>
           </div>
 
-          <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian,%20saya%20ingin%20pesan%20Paket%20Gambar%20Kerja%20Lengkap%20(DED%20%2B%20PBG)." 
+          <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian,%20saya%20ingin%20pesan%20Paket%2002%20(DED%20%26%20Gambar%20Kerja%20Lengkap%20PBG)." 
              target="_blank" 
-             class="mt-8 w-full py-3 text-center rounded-xl bg-gradient-to-r from-brand-gold to-brand-goldhover text-black font-extrabold text-sm transition-all shadow-lg hover:brightness-105">
+             class="mt-8 w-full py-3.5 text-center rounded-xl bg-gradient-to-r from-brand-gold to-brand-goldhover text-black font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg hover:brightness-105">
             Pesan Paket Gambar Kerja (WA)
           </a>
         </div>
@@ -642,38 +1012,27 @@
         <div class="rounded-2xl p-8 bg-brand-card border border-brand-border flex flex-col justify-between hover:border-slate-500 transition-colors">
           <div>
             <span class="text-xs uppercase font-bold tracking-widest text-slate-400">Paket 03</span>
-            <h3 class="font-title text-2xl font-bold text-white mt-1">Desain Total + RAB Akurat</h3>
-            <p class="text-xs text-slate-400 mt-2">Untuk kepastian anggaran material dan upah tukang agar pembangunan tidak berhenti di tengah jalan.</p>
+            <h3 class="font-title text-2xl font-bold text-white mt-1">Desain Komplit + RAB Rinci</h3>
+            <p class="text-xs text-slate-400 mt-2">Untuk kepastian volume material dan upah tukang agar pembangunan tidak berhenti di tengah jalan.</p>
 
             <div class="my-6 py-4 border-y border-brand-border/60">
-              <span class="text-xs text-slate-400">Terlengkap</span>
-              <p class="font-title text-3xl font-extrabold text-white mt-0.5">Desain + RAB</p>
-              <span class="text-xs text-brand-gold">Rincian Volume & Estimasi Biaya Riil</span>
+              <span class="text-xs text-slate-400">Estimasi Fee</span>
+              <p class="font-title text-2xl font-extrabold text-white mt-0.5">Rp 110.000 <span class="text-xs font-normal text-slate-400">/ m²</span></p>
+              <span class="text-xs text-brand-gold">Rincian BOQ & Estimasi Biaya Riil</span>
             </div>
 
             <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold">✓</span>
-                <span><strong>Semua yang ada di Paket 01 & 02</strong></span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold">✓</span>
-                <span>Hitungan RAB Rinci (Analisa Harga Satuan Pekerjaan)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold">✓</span>
-                <span>Bill of Quantity (BOQ) untuk acuan tender mandor</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-gold">✓</span>
-                <span>Konsultasi Pemilihan Material Hemat & Tahan Lama</span>
-              </li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold">✓</span><span><strong>Semua yang ada di Paket 01 & 02</strong></span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold">✓</span><span>Hitungan RAB Rinci Analisa Harga Satuan</span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold">✓</span><span>Bill of Quantity (BOQ) Acuan Mandor</span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold">✓</span><span>Konsultasi Pemilihan Material Tahan Lama</span></li>
+              <li class="flex items-start gap-2"><span class="text-brand-gold">✓</span><span>Pendampingan Selama Pembangunan Fisik</span></li>
             </ul>
           </div>
 
-          <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian,%20saya%20ingin%20konsultasi%20Paket%20Lengkap%20Desain%20plus%20Rencana%20Anggaran%20Biaya%20(RAB)." 
+          <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian,%20saya%20ingin%20konsultasi%20Paket%2003%20(Desain%20Komplit%20%2B%20RAB%20Rinci)." 
              target="_blank" 
-             class="mt-8 w-full py-3 text-center rounded-xl bg-brand-border hover:bg-slate-700 text-white font-bold text-sm transition-colors">
+             class="mt-8 w-full py-3 text-center rounded-xl bg-brand-border hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider transition-colors">
             Pilih Paket Lengkap + RAB
           </a>
         </div>
@@ -688,7 +1047,6 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-brand-card via-brand-cardhover to-brand-card border border-brand-gold/40 relative overflow-hidden shadow-2xl">
-        <!-- Decoration -->
         <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="grid lg:grid-cols-12 gap-8 items-center relative z-10">
@@ -698,7 +1056,7 @@
             </div>
             
             <h2 class="font-title text-3xl sm:text-4xl font-extrabold text-white">
-              Ingin Mahir Software Arsitektur atau Konsultasi Studio Desain?
+              Ingin Mahir Software Arsitektur Seperti Profesional?
             </h2>
 
             <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -708,7 +1066,7 @@
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3">
               <div class="p-3 rounded-xl bg-brand-dark/70 border border-brand-border text-center">
                 <span class="text-xs font-bold text-white block">AutoCAD</span>
-                <span class="text-[10px] text-slate-400">Gambar Kerja 2D</span>
+                <span class="text-[10px] text-slate-400">Gambar Kerja 2D Presisi</span>
               </div>
               <div class="p-3 rounded-xl bg-brand-dark/70 border border-brand-border text-center">
                 <span class="text-xs font-bold text-white block">SketchUp</span>
@@ -720,7 +1078,7 @@
               </div>
               <div class="p-3 rounded-xl bg-brand-dark/70 border border-brand-border text-center">
                 <span class="text-xs font-bold text-white block">ArchiCAD / 3ds Max</span>
-                <span class="text-[10px] text-slate-400">Render & Visual</span>
+                <span class="text-[10px] text-slate-400">Render & Visualisasi</span>
               </div>
             </div>
           </div>
@@ -729,14 +1087,14 @@
             <a href="https://www.superprof.co.id/ir/20866688-5fddeb" 
                target="_blank" 
                rel="noopener noreferrer"
-               class="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-rose-600 hover:opacity-95 text-white font-bold py-4 px-6 rounded-xl text-sm transition-all shadow-lg text-center">
+               class="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-rose-600 hover:opacity-95 text-white font-bold py-4 px-6 rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg text-center">
               <span>Buka Profil Superprof</span>
               <span>↗</span>
             </a>
             
             <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian,%20saya%20ingin%20tanya%20jadwal%20kursus%20privat%20software%20arsitektur." 
                target="_blank"
-               class="flex items-center justify-center gap-2 bg-brand-card border border-brand-border hover:bg-brand-cardhover text-slate-200 font-bold py-3.5 px-6 rounded-xl text-sm transition-all text-center">
+               class="flex items-center justify-center gap-2 bg-brand-card border border-brand-border hover:bg-brand-cardhover text-slate-200 font-bold py-3.5 px-6 rounded-xl text-xs uppercase tracking-wider transition-all text-center">
               <span>Tanya Jadwal via WhatsApp</span>
             </a>
           </div>
@@ -818,7 +1176,6 @@
       </div>
 
       <div class="space-y-4">
-        <!-- FAQ 1 -->
         <details class="group rounded-xl bg-brand-card border border-brand-border p-5 [&_svg]:open:-rotate-180 transition-colors">
           <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-white text-base">
             <span>Bagaimana jika lokasi saya berada di luar kota?</span>
@@ -831,7 +1188,6 @@
           </p>
         </details>
 
-        <!-- FAQ 2 -->
         <details class="group rounded-xl bg-brand-card border border-brand-border p-5 [&_svg]:open:-rotate-180 transition-colors">
           <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-white text-base">
             <span>Apakah gambar kerja bisa langsung dipakai untuk izin PBG (IMB)?</span>
@@ -844,16 +1200,18 @@
           </p>
         </details>
 
-        <!-- FAQ 3 -->
         <details class="group rounded-xl bg-brand-card border border-brand-border p-5 [&_svg]:open:-rotate-180 transition-colors">
           <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-white text-base">
-            <span>Berapa lama estimasi proses pembuatan desain?</span>
+            <span>Bagaimana tahapan pembayaran (termin) jasa desain?</span>
             <svg class="w-5 h-5 text-brand-gold transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <p class="text-slate-300 text-sm mt-3 pt-3 border-t border-brand-border/60 leading-relaxed">
-            Untuk tahap konsep denah & 3D fasad biasanya membutuhkan waktu 7–14 hari kerja. Sedangkan untuk paket lengkap gambar kerja teknis (DED) dan perhitungan RAB memakan waktu 2–4 minggu tergantung pada kompleksitas lahan dan luas bangunan.
+            Pembayaran dibagi bertahap menjadi 3 termin yang aman dan transparan: 
+            <br>1. <strong>Termin 1 (DP 30%)</strong> saat persetujuan awal & mulai pembuatan konsep denah.
+            <br>2. <strong>Termin 2 (40%)</strong> setelah konsep denah disetujui dan masuk tahap pemodelan 3D fasad eksterior.
+            <br>3. <strong>Termin 3 (Pelunasan 30%)</strong> saat seluruh berkas gambar kerja teknis, struktur, MEP, dan RAB selesai siap diserahterimakan.
           </p>
         </details>
       </div>
@@ -871,6 +1229,7 @@
 
       <div class="flex items-center gap-6 text-xs text-slate-400">
         <a href="#proyek" class="hover:text-brand-gold transition-colors">Portofolio</a>
+        <a href="#kalkulator" class="hover:text-brand-gold transition-colors">Kalkulator</a>
         <a href="#layanan" class="hover:text-brand-gold transition-colors">Paket Jasa</a>
         <a href="https://www.superprof.co.id/ir/20866688-5fddeb" target="_blank" class="hover:text-brand-gold transition-colors">Superprof</a>
         <a href="https://wa.me/6282223331219" target="_blank" class="text-brand-gold hover:underline font-bold">WhatsApp: 0822-2333-1219</a>
@@ -878,8 +1237,16 @@
     </div>
   </footer>
 
-  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
-  <aside aria-label="Kontak Cepat WhatsApp" class="fixed bottom-6 right-6 z-40">
+  <!-- ================= FLOATING STICKY ACTION BAR ================= -->
+  <aside aria-label="Kontak Cepat WhatsApp" class="fixed bottom-6 right-6 z-40 flex items-center gap-3">
+    
+    <!-- Quick Calc Floating Button -->
+    <a href="#kalkulator" 
+       class="hidden sm:flex items-center gap-2 bg-brand-card hover:bg-brand-cardhover text-brand-gold border border-brand-gold/50 px-4 py-3 rounded-full shadow-2xl transition-all hover:-translate-y-0.5 text-xs font-bold uppercase tracking-wider">
+      <span>⚙️ Kalkulator Biaya</span>
+    </a>
+
+    <!-- Floating WhatsApp -->
     <a href="https://wa.me/6282223331219?text=Halo%20Mas%20Adrian%20(DiA%20Desain),%20saya%20tertarik%20untuk%20konsultasi%20desain%20rumah." 
        target="_blank" 
        rel="noopener noreferrer"
@@ -888,24 +1255,21 @@
       <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
       </svg>
-      <span class="hidden sm:inline font-bold text-sm">Konsultasi Sekarang</span>
+      <span class="hidden sm:inline font-bold text-xs uppercase tracking-wider">Konsultasi Desain</span>
     </a>
   </aside>
 
   <!-- ================= MODERN MODAL / DIALOG LIGHTBOX ================= -->
   <dialog id="projectModal" class="m-auto p-0 rounded-2xl bg-brand-card text-white border border-brand-border shadow-2xl max-w-2xl w-full backdrop:bg-black/80">
     <div class="relative">
-      <!-- Close Button -->
       <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-brand-dark/80 hover:bg-brand-dark border border-brand-border flex items-center justify-center text-slate-300 hover:text-white transition-colors" aria-label="Tutup Detail">
         ✕
       </button>
 
-      <!-- Modal Image -->
       <div class="aspect-video w-full overflow-hidden rounded-t-2xl bg-black">
         <img id="modalImg" src="" alt="Proyek Detail" class="w-full h-full object-cover">
       </div>
 
-      <!-- Modal Content -->
       <div class="p-6 sm:p-8 space-y-4">
         <div>
           <span id="modalCategory" class="text-xs font-bold uppercase tracking-wider text-brand-gold">Kategori</span>
@@ -925,10 +1289,10 @@
         </div>
 
         <div class="pt-4 flex flex-col sm:flex-row gap-3">
-          <a id="modalWaBtn" href="#" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-brand-gold to-brand-goldhover text-black font-bold text-sm text-center shadow-lg transition-transform hover:-translate-y-0.5">
-            Tanya Konsep Seperti Ini via WhatsApp
+          <a id="modalWaBtn" href="#" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-brand-gold to-brand-goldhover text-black font-bold text-xs uppercase tracking-wider text-center shadow-lg transition-transform hover:-translate-y-0.5">
+            Tanya Konsep Seperti Ini via WA
           </a>
-          <button onclick="closeModal()" class="py-3 px-5 rounded-xl bg-brand-card border border-brand-border hover:bg-brand-cardhover text-slate-300 text-sm font-semibold">
+          <button onclick="closeModal()" class="py-3 px-5 rounded-xl bg-brand-card border border-brand-border hover:bg-brand-cardhover text-slate-300 text-xs font-semibold uppercase tracking-wider">
             Tutup
           </button>
         </div>
@@ -938,7 +1302,46 @@
 
   <!-- ================= JAVASCRIPT ================= -->
   <script>
-    // Project Data for Interactive Modals
+    // 1. Calculator Engine (ala Emporio Architect)
+    const rates = {
+      konsep: { rate: 50000, name: 'Paket 01: Konsep 3D & Tata Ruang' },
+      lengkap: { rate: 85000, name: 'Paket 02: DED Lengkap & PBG Ready' },
+      komplit: { rate: 110000, name: 'Paket 03: Desain Komplit + RAB Rinci' }
+    };
+
+    function calculateCost() {
+      const luas = parseInt(document.getElementById('luasSlider').value, 10);
+      document.getElementById('luasDisplay').textContent = luas;
+
+      const selectedPackage = document.querySelector('input[name="calcPackage"]:checked').value;
+      const packageInfo = rates[selectedPackage];
+
+      const totalCost = luas * packageInfo.rate;
+      const formattedTotal = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(totalCost);
+      
+      document.getElementById('totalDesainCost').textContent = formattedTotal;
+      document.getElementById('packageDetailText').textContent = `Termasuk ${packageInfo.name}`;
+
+      // Estimasi Fisik Bangunan (Rp 4.000.000 - Rp 4.500.000 / m2)
+      const buildMin = (luas * 4000000) / 1000000;
+      const buildMax = (luas * 4500000) / 1000000;
+      document.getElementById('totalBuildEstimate').textContent = `± Rp ${buildMin.toFixed(0)} - ${buildMax.toFixed(0)} Juta`;
+
+      // Update WA Button Link
+      const waMessage = `Halo Mas Adrian, saya sudah mencoba kalkulator di website DiA Desain:
+- Perkiraan Luas Bangunan: ${luas} m²
+- Paket Dipilih: ${packageInfo.name}
+- Estimasi Fee Desain: ${formattedTotal}
+
+Apakah bisa konsultasi jadwal dan tahapan desainnya?`;
+      
+      document.getElementById('calcWaBtn').href = `https://wa.me/6282223331219?text=${encodeURIComponent(waMessage)}`;
+    }
+
+    // Run on initial load
+    calculateCost();
+
+    // 2. Project Data for Interactive Modals
     const projectsData = {
       'project-1': {
         title: 'The Stepped Sanctuary (7x14)',
@@ -1036,7 +1439,6 @@
         btn.classList.add('bg-brand-card', 'text-slate-300');
       });
 
-      // Highlight active button
       event.currentTarget.classList.remove('bg-brand-card', 'text-slate-300');
       event.currentTarget.classList.add('bg-brand-gold', 'text-black');
 
@@ -1100,7 +1502,6 @@
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Close mobile nav on link click
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
