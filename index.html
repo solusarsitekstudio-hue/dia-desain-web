@@ -72,12 +72,51 @@
       box-shadow: 0 0 10px rgba(203, 163, 88, 0.6);
       margin-top: -7px;
     }
-    input[type=range]::-webkit-slider-runnable-track {
+    /* Card Carousel & Image fit rules */
+    .card-carousel {
       width: 100%;
-      height: 8px;
-      cursor: pointer;
-      background: #242832;
-      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      background-color: #0c0e12;
+    }
+    .carousel-item {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .carousel-item.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Big Hero Showcase Slider rules */
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
   </style>
 </head>
@@ -1095,10 +1134,14 @@
         <div class="project-card rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all duration-300 group flex flex-col" data-category="split">
           <!-- Card Carousel -->
           <div class="card-carousel relative overflow-hidden aspect-[16/10] bg-black" data-card="card-1">
-            <div class="carousel-track flex h-full transition-transform duration-500 ease-out">
-              <img loading="lazy" src="images/proyek_7x9_split.jpg" alt="Rumah 7x9 Split Level Tampak Siang" class="w-full h-full object-cover flex-shrink-0">
-              <img loading="lazy" src="images/proyek_7x9_view2.jpg" alt="Rumah 7x9 Split Level Sudut Perspektif" class="w-full h-full object-cover flex-shrink-0">
-              <img loading="lazy" src="images/proyek_7x9_view3.jpg" alt="Rumah 7x9 Split Level Fasad Detail" class="w-full h-full object-cover flex-shrink-0">
+            <div class="carousel-item active">
+              <img loading="lazy" src="images/proyek_7x9_split.jpg" alt="Rumah 7x9 Split Level Tampak Siang" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy" src="images/proyek_7x9_view2.jpg" alt="Rumah 7x9 Split Level Sudut Perspektif" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy" src="images/proyek_7x9_view3.jpg" alt="Rumah 7x9 Split Level Fasad Detail" class="w-full h-full object-cover">
             </div>
             
             <span class="absolute top-3 left-3 bg-brand-dark/90 text-brand-gold text-[11px] font-bold px-3 py-1 rounded-full border border-brand-gold/30 pointer-events-none z-10">
@@ -1106,15 +1149,15 @@
             </span>
 
             <!-- Mini Nav Buttons -->
-            <button onclick="prevCardSlide('card-1')" aria-label="Foto Sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs">
+            <button onclick="prevCardSlide('card-1')" aria-label="Foto Sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/70 hover:bg-black/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs shadow-md">
               ❮
             </button>
-            <button onclick="nextCardSlide('card-1')" aria-label="Foto Selanjutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs">
+            <button onclick="nextCardSlide('card-1')" aria-label="Foto Selanjutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/70 hover:bg-black/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs shadow-md">
               ❯
             </button>
 
             <!-- Mini Dots -->
-            <div class="card-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/40 px-2 py-0.5 rounded-full">
+            <div class="card-dots absolute bottom-2.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/50 px-2.5 py-1 rounded-full backdrop-blur-sm">
               <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
@@ -1148,24 +1191,28 @@
         <div class="project-card rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all duration-300 group flex flex-col" data-category="split">
           <!-- Card Carousel -->
           <div class="card-carousel relative overflow-hidden aspect-[16/10] bg-black" data-card="card-2">
-            <div class="carousel-track flex h-full transition-transform duration-500 ease-out">
-              <img loading="lazy" src="images/proyek_compact_bata.jpg" alt="Rumah Split Level Bata Ekspos Tampak Depan" class="w-full h-full object-cover flex-shrink-0">
-              <img loading="lazy" src="images/proyek_compact_view2.jpg" alt="Rumah Split Level Bata Ekspos Detail Planter" class="w-full h-full object-cover flex-shrink-0">
-              <img loading="lazy" src="images/proyek_compact_view3.jpg" alt="Rumah Split Level Bata Ekspos Sudut Perspektif" class="w-full h-full object-cover flex-shrink-0">
+            <div class="carousel-item active">
+              <img loading="lazy" src="images/proyek_compact_bata.jpg" alt="Rumah Split Level Bata Ekspos Tampak Depan" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy" src="images/proyek_compact_view2.jpg" alt="Rumah Split Level Bata Ekspos Detail Planter" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy" src="images/proyek_compact_view3.jpg" alt="Rumah Split Level Bata Ekspos Sudut Perspektif" class="w-full h-full object-cover">
             </div>
             
             <span class="absolute top-3 left-3 bg-brand-dark/90 text-brand-gold text-[11px] font-bold px-3 py-1 rounded-full border border-brand-gold/30 pointer-events-none z-10">
               Compact 3 Lantai
             </span>
 
-            <button onclick="prevCardSlide('card-2')" aria-label="Foto Sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs">
+            <button onclick="prevCardSlide('card-2')" aria-label="Foto Sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/70 hover:bg-black/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs shadow-md">
               ❮
             </button>
-            <button onclick="nextCardSlide('card-2')" aria-label="Foto Selanjutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs">
+            <button onclick="nextCardSlide('card-2')" aria-label="Foto Selanjutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/70 hover:bg-black/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs shadow-md">
               ❯
             </button>
 
-            <div class="card-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/40 px-2 py-0.5 rounded-full">
+            <div class="card-dots absolute bottom-2.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/50 px-2.5 py-1 rounded-full backdrop-blur-sm">
               <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
@@ -1199,24 +1246,28 @@
         <div class="project-card rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all duration-300 group flex flex-col" data-category="compact">
           <!-- Card Carousel -->
           <div class="card-carousel relative overflow-hidden aspect-[16/10] bg-black" data-card="card-3">
-            <div class="carousel-track flex h-full transition-transform duration-500 ease-out">
-              <img loading="lazy" src="images/proyek_modern_split.jpg" alt="The Horizon Split Villa Tampak Fasad" class="w-full h-full object-cover flex-shrink-0">
-              <img loading="lazy" src="images/proyek_modern_angle2.jpg" alt="The Horizon Split Villa Sudut Sore" class="w-full h-full object-cover flex-shrink-0">
-              <img loading="lazy" src="images/proyek_villa_view2.jpg" alt="The Horizon Split Villa Rooftop Lounge" class="w-full h-full object-cover flex-shrink-0">
+            <div class="carousel-item active">
+              <img loading="lazy" src="images/proyek_modern_split.jpg" alt="The Horizon Split Villa Tampak Fasad" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy" src="images/proyek_modern_angle2.jpg" alt="The Horizon Split Villa Sudut Sore" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy" src="images/proyek_villa_view2.jpg" alt="The Horizon Split Villa Rooftop Lounge" class="w-full h-full object-cover">
             </div>
             
             <span class="absolute top-3 left-3 bg-brand-dark/90 text-brand-gold text-[11px] font-bold px-3 py-1 rounded-full border border-brand-gold/30 pointer-events-none z-10">
               Modern Minimalist
             </span>
 
-            <button onclick="prevCardSlide('card-3')" aria-label="Foto Sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs">
+            <button onclick="prevCardSlide('card-3')" aria-label="Foto Sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/70 hover:bg-black/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs shadow-md">
               ❮
             </button>
-            <button onclick="nextCardSlide('card-3')" aria-label="Foto Selanjutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs">
+            <button onclick="nextCardSlide('card-3')" aria-label="Foto Selanjutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/70 hover:bg-black/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs shadow-md">
               ❯
             </button>
 
-            <div class="card-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/40 px-2 py-0.5 rounded-full">
+            <div class="card-dots absolute bottom-2.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/50 px-2.5 py-1 rounded-full backdrop-blur-sm">
               <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
@@ -1250,24 +1301,28 @@
         <div class="project-card rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all duration-300 group flex flex-col" data-category="compact">
           <!-- Card Carousel -->
           <div class="card-carousel relative overflow-hidden aspect-[16/10] bg-black" data-card="card-4">
-            <div class="carousel-track flex h-full transition-transform duration-500 ease-out">
-              <img loading="lazy" src="images/proyek_roster_cantilever.jpg" alt="Modern Compact House Roster & Cantilever Kayu" class="w-full h-full object-cover flex-shrink-0">
-              <img loading="lazy" src="images/proyek_timber_view2.jpg" alt="Detail Cantilever Box Kayu Tropis" class="w-full h-full object-cover flex-shrink-0">
-              <img loading="lazy" src="images/proyek_timber_view3.jpg" alt="Sudut Fasad Roster Malam Hari" class="w-full h-full object-cover flex-shrink-0">
+            <div class="carousel-item active">
+              <img loading="lazy" src="images/proyek_roster_cantilever.jpg" alt="Modern Compact House Roster & Cantilever Kayu" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy" src="images/proyek_timber_view2.jpg" alt="Detail Cantilever Box Kayu Tropis" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy" src="images/proyek_timber_view3.jpg" alt="Sudut Fasad Roster Malam Hari" class="w-full h-full object-cover">
             </div>
             
             <span class="absolute top-3 left-3 bg-brand-dark/90 text-brand-gold text-[11px] font-bold px-3 py-1 rounded-full border border-brand-gold/30 pointer-events-none z-10">
               Urban Compact
             </span>
 
-            <button onclick="prevCardSlide('card-4')" aria-label="Foto Sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs">
+            <button onclick="prevCardSlide('card-4')" aria-label="Foto Sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/70 hover:bg-black/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs shadow-md">
               ❮
             </button>
-            <button onclick="nextCardSlide('card-4')" aria-label="Foto Selanjutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs">
+            <button onclick="nextCardSlide('card-4')" aria-label="Foto Selanjutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/70 hover:bg-black/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs shadow-md">
               ❯
             </button>
 
-            <div class="card-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/40 px-2 py-0.5 rounded-full">
+            <div class="card-dots absolute bottom-2.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/50 px-2.5 py-1 rounded-full backdrop-blur-sm">
               <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
@@ -1301,24 +1356,28 @@
         <div class="project-card rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all duration-300 group flex flex-col" data-category="kawasan">
           <!-- Card Carousel -->
           <div class="card-carousel relative overflow-hidden aspect-[16/10] bg-black" data-card="card-5">
-            <div class="carousel-track flex h-full transition-transform duration-500 ease-out">
-              <img loading="lazy" src="images/proyek_resort_wellness.jpg" alt="Reven Spa & Wellness Resort Architecture" class="w-full h-full object-cover flex-shrink-0">
-              <img loading="lazy" src="images/highlight_resort_sunset.jpg" alt="Reven Spa Plunge Pool Sunset Atmosphere" class="w-full h-full object-cover flex-shrink-0">
-              <img loading="lazy" src="images/highlight_resort_pool.jpg" alt="Reven Spa Open Lounge Area" class="w-full h-full object-cover flex-shrink-0">
+            <div class="carousel-item active">
+              <img loading="lazy" src="images/proyek_resort_wellness.jpg" alt="Reven Spa & Wellness Resort Architecture" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy" src="images/highlight_resort_sunset.jpg" alt="Reven Spa Plunge Pool Sunset Atmosphere" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy" src="images/highlight_resort_pool.jpg" alt="Reven Spa Open Lounge Area" class="w-full h-full object-cover">
             </div>
             
             <span class="absolute top-3 left-3 bg-brand-dark/90 text-brand-gold text-[11px] font-bold px-3 py-1 rounded-full border border-brand-gold/30 pointer-events-none z-10">
               Hospitality Resort
             </span>
 
-            <button onclick="prevCardSlide('card-5')" aria-label="Foto Sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs">
+            <button onclick="prevCardSlide('card-5')" aria-label="Foto Sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/70 hover:bg-black/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs shadow-md">
               ❮
             </button>
-            <button onclick="nextCardSlide('card-5')" aria-label="Foto Selanjutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs">
+            <button onclick="nextCardSlide('card-5')" aria-label="Foto Selanjutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/70 hover:bg-black/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs shadow-md">
               ❯
             </button>
 
-            <div class="card-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/40 px-2 py-0.5 rounded-full">
+            <div class="card-dots absolute bottom-2.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/50 px-2.5 py-1 rounded-full backdrop-blur-sm">
               <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
@@ -1352,24 +1411,28 @@
         <div class="project-card rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all duration-300 group flex flex-col" data-category="kawasan">
           <!-- Card Carousel -->
           <div class="card-carousel relative overflow-hidden aspect-[16/10] bg-black" data-card="card-6">
-            <div class="carousel-track flex h-full transition-transform duration-500 ease-out">
-              <img loading="lazy" src="images/proyek_masterplan_kawasan.jpg" alt="Masterplan Pengembangan Kawasan 3D Aerial" class="w-full h-full object-cover flex-shrink-0">
-              <img loading="lazy" src="images/proyek_masterplan_view2.jpg" alt="Masterplan Sirkulasi dan Helipad Area" class="w-full h-full object-cover flex-shrink-0">
-              <img loading="lazy" src="images/proyek_masterplan_view3.jpg" alt="Masterplan Zonasi Fasilitas Publik" class="w-full h-full object-cover flex-shrink-0">
+            <div class="carousel-item active">
+              <img loading="lazy" src="images/proyek_masterplan_kawasan.jpg" alt="Masterplan Pengembangan Kawasan 3D Aerial" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy" src="images/proyek_masterplan_view2.jpg" alt="Masterplan Sirkulasi dan Helipad Area" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy" src="images/proyek_masterplan_view3.jpg" alt="Masterplan Zonasi Fasilitas Publik" class="w-full h-full object-cover">
             </div>
             
             <span class="absolute top-3 left-3 bg-brand-dark/90 text-brand-gold text-[11px] font-bold px-3 py-1 rounded-full border border-brand-gold/30 pointer-events-none z-10">
               Masterplan Kawasan
             </span>
 
-            <button onclick="prevCardSlide('card-6')" aria-label="Foto Sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs">
+            <button onclick="prevCardSlide('card-6')" aria-label="Foto Sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/70 hover:bg-black/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs shadow-md">
               ❮
             </button>
-            <button onclick="nextCardSlide('card-6')" aria-label="Foto Selanjutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs">
+            <button onclick="nextCardSlide('card-6')" aria-label="Foto Selanjutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/70 hover:bg-black/95 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 text-xs shadow-md">
               ❯
             </button>
 
-            <div class="card-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/40 px-2 py-0.5 rounded-full">
+            <div class="card-dots absolute bottom-2.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/50 px-2.5 py-1 rounded-full backdrop-blur-sm">
               <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
@@ -1958,6 +2021,7 @@ Apakah bisa konsultasi jadwal dan tahapan desainnya?`;
     let heroSlideTimer = null;
 
     function showHeroSlide(index) {
+      if (!heroSlides.length) return;
       if (index >= heroSlides.length) currentHeroSlide = 0;
       else if (index < 0) currentHeroSlide = heroSlides.length - 1;
       else currentHeroSlide = index;
@@ -2000,26 +2064,38 @@ Apakah bisa konsultasi jadwal dan tahapan desainnya?`;
       if (heroSlideTimer) clearInterval(heroSlideTimer);
       heroSlideTimer = setInterval(() => {
         showHeroSlide(currentHeroSlide + 1);
-      }, 5000); // Otomatis bergeser tiap 5 detik
+      }, 4000); // Otomatis bergeser tiap 4 detik
     }
 
     resetHeroAutoPlay();
 
-    // ================= 4. CARD MINI CAROUSEL ENGINE =================
+    // ================= 4. CARD MINI CAROUSEL ENGINE (CROSSFADE & FIT) =================
     const cardCarouselStates = {};
 
-    function updateCardCarousel(cardId) {
+    function showCardSlide(cardId, index) {
       const container = document.querySelector(`[data-card="${cardId}"]`);
       if (!container) return;
 
-      const track = container.querySelector('.carousel-track');
+      const items = container.querySelectorAll('.carousel-item');
       const dots = container.querySelectorAll('.card-dots span');
-      const currentIndex = cardCarouselStates[cardId] || 0;
+      if (!items.length) return;
 
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      let targetIndex = index;
+      if (targetIndex >= items.length) targetIndex = 0;
+      else if (targetIndex < 0) targetIndex = items.length - 1;
+
+      cardCarouselStates[cardId] = targetIndex;
+
+      items.forEach((item, i) => {
+        if (i === targetIndex) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
 
       dots.forEach((dot, i) => {
-        if (i === currentIndex) {
+        if (i === targetIndex) {
           dot.className = 'w-1.5 h-1.5 rounded-full bg-brand-gold transition-all';
         } else {
           dot.className = 'w-1.5 h-1.5 rounded-full bg-white/40 transition-all';
@@ -2028,41 +2104,35 @@ Apakah bisa konsultasi jadwal dan tahapan desainnya?`;
     }
 
     function nextCardSlide(cardId) {
-      const container = document.querySelector(`[data-card="${cardId}"]`);
-      if (!container) return;
-      const imagesCount = container.querySelectorAll('.carousel-track img').length;
-      
-      let current = cardCarouselStates[cardId] || 0;
-      current = (current + 1) % imagesCount;
-      cardCarouselStates[cardId] = current;
-      updateCardCarousel(cardId);
+      const current = cardCarouselStates[cardId] || 0;
+      showCardSlide(cardId, current + 1);
     }
 
     function prevCardSlide(cardId) {
-      const container = document.querySelector(`[data-card="${cardId}"]`);
-      if (!container) return;
-      const imagesCount = container.querySelectorAll('.carousel-track img').length;
-
-      let current = cardCarouselStates[cardId] || 0;
-      current = (current - 1 + imagesCount) % imagesCount;
-      cardCarouselStates[cardId] = current;
-      updateCardCarousel(cardId);
+      const current = cardCarouselStates[cardId] || 0;
+      showCardSlide(cardId, current - 1);
     }
 
-    // Auto-rotate card carousels subtly every 4.5 seconds with slight offsets
-    const allCards = ['card-1', 'card-2', 'card-3', 'card-4', 'card-5', 'card-6'];
-    allCards.forEach((id, idx) => {
-      cardCarouselStates[id] = 0;
-      // Stagger auto-play so cards don't all flip at the exact same millisecond
-      setTimeout(() => {
-        setInterval(() => {
-          // Only auto-slide if user is not hovering over the card
-          const container = document.querySelector(`[data-card="${id}"]`);
-          if (container && !container.matches(':hover')) {
-            nextCardSlide(id);
+    // Initialize all cards and setup individual auto-play timers
+    const cardList = ['card-1', 'card-2', 'card-3', 'card-4', 'card-5', 'card-6'];
+    cardList.forEach((cardId, index) => {
+      cardCarouselStates[cardId] = 0;
+      showCardSlide(cardId, 0);
+
+      // Auto-slide interval with staggered start delay
+      let cardTimer = null;
+      function startCardAutoSlide() {
+        if (cardTimer) clearInterval(cardTimer);
+        cardTimer = setInterval(() => {
+          const container = document.querySelector(`[data-card="${cardId}"]`);
+          // Don't auto-slide if user is currently hovering on the card
+          if (container && !container.closest('.project-card').matches(':hover')) {
+            nextCardSlide(cardId);
           }
-        }, 4500);
-      }, idx * 600);
+        }, 3500); // Berganti otomatis tiap 3.5 detik
+      }
+
+      setTimeout(startCardAutoSlide, (index + 1) * 700);
     });
   </script>
 </body>
