@@ -1,0 +1,11 @@
+# System and cache files
+.DS_Store
+Thumbs.db
+*.bak
+
+# Antigravity Scratch & Diskuss DB
+scratch/
+.diskuss/
+
+# Video archives from raw editing (if heavy)
+# Keep lightweight web assets in git
