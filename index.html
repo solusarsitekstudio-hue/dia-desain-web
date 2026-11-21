@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="images/highlight_split_level_4k.jpg">
 
   <!-- Favicon SVG (Brand 'D' Icon) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230c0e12'/><rect x='4' y='4' width='92' height='92' rx='18' fill='none' stroke='%23cba358' stroke-width='3' stroke-opacity='0.6'/><text x='50' y='68' font-size='54' font-family='sans-serif' font-weight='900' fill='%23cba358' text-anchor='middle'>D</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e222b'/><rect x='4' y='4' width='92' height='92' rx='18' fill='none' stroke='%23cba358' stroke-width='3' stroke-opacity='0.6'/><text x='50' y='68' font-size='54' font-family='sans-serif' font-weight='900' fill='%23cba358' text-anchor='middle'>D</text></svg>">
   
   <!-- Google Fonts: Syne, Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,11 +41,11 @@
         extend: {
           colors: {
             brand: {
-              dark: '#080a0d',
-              charcoal: '#0e1117',
-              card: '#131720',
-              cardhover: '#191e2a',
-              border: '#232936',
+              dark: '#1e222b',
+              charcoal: '#262b37',
+              card: '#2e3544',
+              cardhover: '#373f52',
+              border: '#454e63',
               gold: '#cba358',
               goldhover: '#e2ba6e',
               champagne: '#edd8b4',
@@ -69,10 +69,10 @@
       width: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #080a0d;
+      background: #1e222b;
     }
     ::-webkit-scrollbar-thumb {
-      background: #232936;
+      background: #454e63;
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
@@ -81,7 +81,7 @@
     
     /* Native dialog backdrop styling */
     dialog::backdrop {
-      background: rgba(4, 6, 8, 0.88);
+      background: rgba(22, 26, 34, 0.88);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
     }
@@ -89,22 +89,22 @@
     /* Architectural Subtle Grid Background */
     .arch-grid {
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
       background-size: 44px 44px;
     }
 
     /* Luxury Glassmorphism Card Style */
     .glass-card {
-      background: rgba(19, 23, 32, 0.72);
+      background: rgba(46, 53, 68, 0.72);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .glass-card:hover {
-      border-color: rgba(203, 163, 88, 0.45);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(203, 163, 88, 0.12);
+      border-color: rgba(203, 163, 88, 0.5);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(203, 163, 88, 0.18);
     }
 
     /* Range slider custom thumb & track compliant with modern-web-guidance */
@@ -149,7 +149,7 @@
       position: relative;
       overflow: hidden;
       aspect-ratio: 16 / 10;
-      background-color: #080a0d;
+      background-color: #1e222b;
     }
     .carousel-track {
       display: flex;
@@ -196,7 +196,7 @@
       user-select: none;
       -webkit-user-select: none;
       touch-action: pan-y;
-      background: #080a0d;
+      background: #1e222b;
     }
     @media (min-width: 768px) {
       .comparison-container {
@@ -242,13 +242,13 @@
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: #080a0d;
+      background: #1e222b;
       border: 2px solid #cba358;
       color: #cba358;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(203, 163, 88, 0.6);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(203, 163, 88, 0.6);
       font-size: 15px;
       pointer-events: auto;
       cursor: ew-resize;
