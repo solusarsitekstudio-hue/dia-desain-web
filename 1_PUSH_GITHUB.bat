@@ -17,8 +17,16 @@ echo.
 
 cd /d "E:\WORKSHOP\WEB_PORTFO"
 
-echo Mengunggah perubahan ke branch main (GitHub Pages)...
+echo [1/3] Mengunggah perubahan ke branch main...
 git push origin main
+
+echo.
+echo [2/3] Menyinkronkan ke branch gh-pages (Deployment GitHub Pages)...
+git push origin main:gh-pages --force
+
+echo.
+echo [3/3] Menyinkronkan ke branch master...
+git push origin main:master --force
 
 if %ERRORLEVEL% EQU 0 (
     echo.
